@@ -30,12 +30,12 @@ public class View {
         System.out.println("add 1 item with ID 333");
         contr.showItemAddedToSale(333);
         double totalPrice = contr.endSale();
-        System.out.println("Total cost ( incl VAT ):"+ String.format("%.2f",totalPrice));
+        System.out.println("Total cost ( incl VAT ): "+ String.format("%.2f",totalPrice) + " SEK");
         System.out.println("Customer pays:"+ 100);
         contr.pay(totalPrice,100);
         System.out.println("Told external inventory system to decrease inventory quantity");
         //contr.printReceipt(100);
-        System.out.println("Change to give the customer:" + String.format("%.2f", contr.getChange(totalPrice, 100)));
+        System.out.println("Change to give the customer:" + String.format("%.2f", contr.getChange(totalPrice, 100)) + " SEK");
         
     }
 

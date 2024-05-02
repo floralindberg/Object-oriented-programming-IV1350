@@ -34,11 +34,6 @@ public class PrinterTest {
             this.contr.startSale();
             System.setOut(new PrintStream(outputStreamCaptor));
         }
-    /**
-     *Test som kontrollerar om printer fungerar som den ska.
-     * 
-     */
-
 
 
     @Test

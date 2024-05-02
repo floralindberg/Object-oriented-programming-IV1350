@@ -44,10 +44,6 @@ public class ContrTest {
             this.codeOfItem1 = 111;
             this.codeOfItem2 = 222;
         }
-        /*
-        *Test som kontrollerar om metoden enterItemIdentifier fungerar och om rätt antal items och dess kvantitet
-        *läggs in i försäljningen
-        */
 
         @Test
         public void testAddItem() {
@@ -66,13 +62,6 @@ public class ContrTest {
             assertEquals(1, sale.getAllItems().get(0).get(0).getQuantity(), "Unexpected quantity of the first item in the sale");
         }
         
-        /**
-         *Test som kontrollerar paymetoden i controller.
-         * Den kontrollerar så priset som läggs in i externalAccountingSystem stämmer och om kvantiteten
-         * på items i inventory går ner.
-         */
-
-
         @Test
         public void testPay() {
             double totalAmount = 100;
@@ -116,11 +105,6 @@ public class ContrTest {
         assertEquals(expectedTotalPriceVAT, actualTotalPriceVAT,01);
 
         }
-
-        /**
-         * Test som testar om getChange metoden i controller fungerar
-         *
-         */
 
         @Test
         public void testGetChange(){

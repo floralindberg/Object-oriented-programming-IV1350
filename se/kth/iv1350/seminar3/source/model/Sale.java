@@ -6,7 +6,10 @@ import java.util.ArrayList;
 
 import se.kth.iv1350.seminar3.source.integration.Item;
 
-
+/**
+ * This class represents a sale transaction. It maintains a list of all items included in the sale
+ * and generates a receipt for the sale. Each sale is timestamped with the time of creation.
+ */
 
 public class Sale {
     private ArrayList<Item> singleItemInfo;
@@ -36,19 +39,7 @@ public class Sale {
         return currentTime.format(formatter);
     }
 
-    /**
-     * Private method that could be implemented directly in Sale method
-     * Keeping it as its own method for clarity
-     */
-    /*public void setTimeOfSale () {
-        timeOfSale = LocalTime.now();
-    }
-
-    public LocalTime getTimeOfSale() {
-        return this.timeOfSale;
-    }
-*/
- /**
+/**
   * Method for registering all of the items in the sale
   * @param item sends in all of the items being puchased
   */
@@ -83,14 +74,7 @@ public class Sale {
         }
         return totalPrice;
     }
-/* 
-    double totalPriceVAT = 0.0;
-    for (ArrayList<Item> singleItemInfo : listOfAllItems) {
-        for (Item item : singleItemInfo) {
-            totalPriceVAT += (item.getPrice() * (1 + (item.getVAT() / 100)));
-        }
-    }
-    return totalPriceVAT;*/
+    
     /**
      * Method that calculates the VAT of one single item
      * @param item the item that we want the price with VAT of
@@ -102,9 +86,6 @@ public class Sale {
         double priceVAT = item.getPrice()-priceWithoutVAT;
         return priceVAT;
     }
-
-    //double priceWithVAT = item.getPrice() * (1 + (item.getVAT() / 100));
-        //return priceWithVAT;
 
     /**
      * Calculates only the total VAT of the sale

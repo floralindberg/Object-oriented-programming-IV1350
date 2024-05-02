@@ -8,7 +8,9 @@ import se.kth.iv1350.seminar3.source.integration.Printer;
 import se.kth.iv1350.seminar3.source.model.Payment;
 import se.kth.iv1350.seminar3.source.model.Sale;;
 
-
+/**
+ * The main controller class that handles the flow of the application.
+ */
 
 public class Controller {
     private Sale sale;
@@ -18,6 +20,11 @@ public class Controller {
     private ExternalAccountingSystem externalAccountingSystem;
     private Item item;
     private Printer printer;
+
+    /**
+     * Constructor for the Controller class.
+     * Initializes the external systems and the printer.
+     */
 
     public Controller() {
 		this.externalSystemCreator = new ExternalSystemCreator();
@@ -63,15 +70,15 @@ public class Controller {
     public void showItemAddedToSale(int codeOfItem){
 
         item = externalInventorySystem.getItemCopyFromInventory(codeOfItem);
-
+    
         System.out.println("Item ID:" + item.getCodeOfItem());
         System.out.println("Item name:" + item.getItemName());
-        System.out.println("Item cost:" + item.getPrice());
-        System.out.println("VAT:" + item.getVAT());
+        System.out.println("Item cost:" + String.format("%.2f", item.getPrice()) + " SEK");
+        System.out.println("VAT:" + String.format("%.2f", item.getVAT()) + " %");
         System.out.println("Item description:" + item.getDescription());
-        System.out.println("Total cost (incl VAT):" + String.format("%.2f", sale.calculateTotalPrice()));
-        System.out.println("Total VAT:" + sale.calculateTotalAmountVAT());
-
+        System.out.println("Total cost (incl VAT):" + String.format("%.2f", sale.calculateTotalPrice()) + " SEK");
+        System.out.println("Total VAT:" + String.format("%.2f", sale.calculateTotalAmountVAT()) + " %");
+    
     }
 
     

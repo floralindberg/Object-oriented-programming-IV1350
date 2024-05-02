@@ -21,7 +21,7 @@ public class Receipt {
     public String receiptInfo(double amountInRegister, double paidAmount) {
 
         StringBuilder receiptBuilder = new StringBuilder();
-
+    
         receiptBuilder.append(this.startReceipt).append("\n").append("\n");
         
         for (ArrayList<Item> itemGroup : sale.getReceiptArray()) {
@@ -30,20 +30,17 @@ public class Receipt {
             int quantity = item.getQuantity();
             double pricePerItem = item.getPrice();
             double totalPrice = quantity * item.getPrice();
-
-            receiptBuilder.append(item.getItemName()).append(" ").append(quantity).append(" ").append("x ").append(String.format("%.2f", pricePerItem)).append(":").append(" ").append(String.format("%.2f", totalPrice)).append(" SEK").append("\n").append("\n");
+    
+            receiptBuilder.append(item.getItemName()).append(" ").append(quantity).append(" ").append("x ").append(String.format("%.2f", pricePerItem)).append(" SEK:").append(" ").append(String.format("%.2f", totalPrice)).append(" SEK").append("\n").append("\n");
     }
     
     double totalAmount = sale.calculateTotalPrice();
     double totalVAT = sale.calculateTotalAmountVAT();
-
-    receiptBuilder.append("\n").append("Total : ").append(String.format("%.2f", totalAmount)).append(" SEK").append("\n").append("VAT : ").append(String.format("%.2f", totalVAT)).append("\n\n");
-
     
-    double change = paidAmount - totalAmount;
-
-    receiptBuilder.append("Cash : ").append(String.format("%.2f", paidAmount)).append(" SEK").append("\n").append("Change : ").append(String.format("%.2f", change)).append(" SEK").append("\n").append(this.endReceipt);
-
+    receiptBuilder.append("\n").append("Total : ").append(String.format("%.2f", totalAmount)).append(" SEK").append("\n").append("VAT : ").append(String.format("%.2f", totalVAT)).append(" %").append("\n\n");
+    
+    receiptBuilder.append(this.endReceipt);
+    
     return receiptBuilder.toString();
-}
+    }
 }

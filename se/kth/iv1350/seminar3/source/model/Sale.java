@@ -147,4 +147,14 @@ public class Sale {
 
         return newItemsList;
     }
+
+    public String getTotalPriceAndVAT(){
+
+        StringBuilder saleBuilder = new StringBuilder();
+
+        saleBuilder.append("Total cost (incl VAT):").append(String.format("%.2f", calculateTotalPrice())).append(" SEK").append("\n").append("Total VAT:").append(String.format("%.2f", calculateTotalAmountVAT())).append(" SEK");
+        return saleBuilder.toString();
+
+    }
+
 }

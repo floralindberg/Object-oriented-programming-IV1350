@@ -17,9 +17,9 @@ import java.util.ArrayList;
             fakeInventorySystem = new ArrayList<>();
     
 
-            ItemDTO itemOne = new ItemDTO(111, "Big Wheel Oatmeal", 100, 29, 6, "BigWheel Oatmeal 500 g , whole grain oats ,\n" + "high fiber , gluten free");
+            ItemDTO itemOne = new ItemDTO(111, "Big Wheel Oatmeal", 100, 29, 6, "BigWheel Oatmeal 500 g, whole grain oats,\n" + "high fiber, gluten free");
             ItemDTO itemTwo = new ItemDTO(222, "Green Apple", 100, 20, 2, "Grönt äpple - Granny Smith");
-            ItemDTO itemThree = new ItemDTO(333, "YouGoGo Blueberry", 100, 14, 5, "YouGoGo Blueberry 240 g , low sugar youghurt ,\n" + "blueberry flavour");
+            ItemDTO itemThree = new ItemDTO(333, "YouGoGo Blueberry", 100, 14, 5, "YouGoGo Blueberry 240 g, low sugar youghurt,\n" + "blueberry flavour");
     
             fakeInventorySystem.add(new Item(itemOne));
             fakeInventorySystem.add(new Item(itemTwo));

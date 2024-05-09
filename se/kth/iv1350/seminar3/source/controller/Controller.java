@@ -6,7 +6,8 @@ import se.kth.iv1350.seminar3.source.integration.ExternalSystemCreator;
 import se.kth.iv1350.seminar3.source.integration.Item;
 import se.kth.iv1350.seminar3.source.integration.Printer;
 import se.kth.iv1350.seminar3.source.model.Payment;
-import se.kth.iv1350.seminar3.source.model.Sale;;
+import se.kth.iv1350.seminar3.source.model.Sale;
+import se.kth.iv1350.seminar3.source.integration.ItemDTO;
 
 /**
  * The main controller class that handles the flow of the application.
@@ -55,29 +56,25 @@ public class Controller {
      * If it does, the item information can be found.
      * @param codeOfItem the information sent in to check if item exists i inventory. 
      */
-    public void enterItemIdentifier(int codeOfItem){
+    public ItemDTO enterItemIdentifier(int codeOfItem){
 		boolean checkIfItemExists = externalInventorySystem.verifyItemByCode(codeOfItem);
 
+        Item item = externalInventorySystem.getItemCopyFromInventory(codeOfItem);
+
         if (checkIfItemExists){
-            sale.registerAllItems(externalInventorySystem.getItemCopyFromInventory(codeOfItem));
+            sale.registerAllItems(item);
         }
+
+        return item.getItemDTO(item);
 	}
 
     /**
      * Gets all the information about an item and shows the item information
      * @param codeOfItem the sent in information about the product to find whole information.
      */
-    public void showItemAddedToSale(int codeOfItem){
+    public String showTotalPriceAndVAT(){
 
-        item = externalInventorySystem.getItemCopyFromInventory(codeOfItem);
-    
-        System.out.println("Item ID:" + item.getCodeOfItem());
-        System.out.println("Item name:" + item.getItemName());
-        System.out.println("Item cost:" + String.format("%.2f", item.getPrice()) + " SEK");
-        System.out.println("VAT:" + String.format("%.2f", item.getVAT()) + " %");
-        System.out.println("Item description:" + item.getDescription());
-        System.out.println("Total cost (incl VAT):" + String.format("%.2f", sale.calculateTotalPrice()) + " SEK");
-        System.out.println("Total VAT:" + String.format("%.2f", sale.calculateTotalAmountVAT()) + " %");
+        return sale.getTotalPriceAndVAT();
     
     }
 

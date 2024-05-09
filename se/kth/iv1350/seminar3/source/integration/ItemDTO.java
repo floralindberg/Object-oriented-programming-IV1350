@@ -66,14 +66,13 @@ public class ItemDTO {
      */
     @Override
     public String toString() {
-        return "ItemDTO{" +
-                "codeOfItem=" + codeOfItem +
-                ", itemName=" + itemName +
-                ", quantity=" + quantity +
-                ", price=" + price +
-                ", VAT=" + VAT +
-                ", description='" + description + '\'' +
-                '}';
+        return
+        "Item ID: " + codeOfItem  + "\n" +
+        "Item name: " + itemName + "\n" +
+        "Item cost: " + price + " SEK" + " \n" +
+        "VAT: " + VAT + " %" + "\n" +
+        "Item description: " + description;
+
     }
     
 }

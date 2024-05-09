@@ -20,15 +20,20 @@ public class View {
     public void runFakeExecution() {
         contr.startSale();
         System.out.println("A new sale has been started.");
-        contr.enterItemIdentifier(111);
+
         System.out.println("add 1 item with ID 111");
-        contr.showItemAddedToSale(111);
-        contr.enterItemIdentifier(111);
+        System.out.println(contr.enterItemIdentifier(111));
+        System.out.println(contr.showTotalPriceAndVAT());
+
+
         System.out.println("add 1 item with ID 111");
-        contr.showItemAddedToSale(111);
-        contr.enterItemIdentifier(333);
+        System.out.println(contr.enterItemIdentifier(111));
+        System.out.println(contr.showTotalPriceAndVAT());
+
         System.out.println("add 1 item with ID 333");
-        contr.showItemAddedToSale(333);
+        System.out.println(contr.enterItemIdentifier(333));
+        System.out.println(contr.showTotalPriceAndVAT());
+        
         double totalPrice = contr.endSale();
         System.out.println("Total cost ( incl VAT ): "+ String.format("%.2f",totalPrice) + " SEK");
         System.out.println("Customer pays:"+ 100);

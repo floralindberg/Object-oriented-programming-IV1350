@@ -24,7 +24,7 @@ public class Receipt {
     
         receiptBuilder.append(this.startReceipt).append("\n").append("\n");
         
-        for (ArrayList<Item> itemGroup : sale.getReceiptArray()) {
+        for (ArrayList<Item> itemGroup : sale.getAllItems()) {
             
             Item item = itemGroup.get(0);
             int quantity = item.getQuantity();
@@ -37,7 +37,7 @@ public class Receipt {
     double totalAmount = sale.calculateTotalPrice();
     double totalVAT = sale.calculateTotalAmountVAT();
     
-    receiptBuilder.append("\n").append("Total : ").append(String.format("%.2f", totalAmount)).append(" SEK").append("\n").append("VAT : ").append(String.format("%.2f", totalVAT)).append(" %").append("\n\n");
+    receiptBuilder.append("\n").append("Total : ").append(String.format("%.2f", totalAmount)).append(" SEK").append("\n").append("VAT : ").append(String.format("%.2f", totalVAT)).append(" SEK").append("\n\n");
     
     receiptBuilder.append(this.endReceipt);
     

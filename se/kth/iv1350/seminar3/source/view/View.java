@@ -22,21 +22,25 @@ public class View {
         System.out.println("A new sale has been started.");
 
         System.out.println("add 1 item with ID 111");
-        System.out.println(contr.enterItemIdentifier(111));
+        System.out.println(contr.enterItemIdentifier(111) + "\n");
         System.out.println(contr.showTotalPriceAndVAT());
+
 
 
         System.out.println("add 1 item with ID 111");
-        System.out.println(contr.enterItemIdentifier(111));
+        System.out.println(contr.enterItemIdentifier(111) + "\n");
         System.out.println(contr.showTotalPriceAndVAT());
 
+
         System.out.println("add 1 item with ID 333");
-        System.out.println(contr.enterItemIdentifier(333));
+        System.out.println(contr.enterItemIdentifier(333) + "\n");
         System.out.println(contr.showTotalPriceAndVAT());
         
+        
         double totalPrice = contr.endSale();
+        System.out.println("End Sale: ");
         System.out.println("Total cost ( incl VAT ): "+ String.format("%.2f",totalPrice) + " SEK");
-        System.out.println("Customer pays:"+ 100);
+        System.out.println("Customer pays: "+ 100 + " SEK");
         contr.pay(totalPrice,100);
         System.out.println("Told external inventory system to decrease inventory quantity");
         //contr.printReceipt(100);

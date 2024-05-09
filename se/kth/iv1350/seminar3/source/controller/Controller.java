@@ -98,8 +98,8 @@ public class Controller {
      * Method that calls for the receipt to be printed.
      * @param paidAmount is sent to printer with other information about the purchase.
      */
-    public void printReceipt(double paidAmount, double amountInRegister){
-        sale.getReceipt();
+    private void printReceipt(double paidAmount, double amountInRegister){
+    
         printer.print(sale.getTimeOfSale(),sale.getReceipt().receiptInfo(externalAccountingSystem.getTotalAmountInRegister(), paidAmount), amountInRegister);
     }
 

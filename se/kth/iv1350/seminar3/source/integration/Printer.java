@@ -2,7 +2,6 @@ package se.kth.iv1350.seminar3.source.integration;
 
 
 
-
 public class Printer {
 
 

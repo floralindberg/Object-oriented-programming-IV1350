@@ -85,6 +85,6 @@ public class SaleTest {
     public void testGetReceiptArray() {
         contr.enterItemIdentifier(codeOfItem1);
         contr.enterItemIdentifier(codeOfItem2);
-        assertEquals(2, sale.getReceiptArray().size(), "Unexpected number of items in receipt array");
+        assertEquals(2, sale.getAllItems().size(), "Unexpected number of items in receipt array");
     }
 }

@@ -10,8 +10,8 @@ import se.kth.iv1350.seminar3.source.controller.Controller;
 import se.kth.iv1350.seminar3.source.integration.ExternalAccountingSystem;
 import se.kth.iv1350.seminar3.source.integration.ExternalInventorySystem;
 import se.kth.iv1350.seminar3.source.integration.Item;
-import se.kth.iv1350.seminar3.source.model.Sale;
 import se.kth.iv1350.seminar3.source.model.Payment;
+import se.kth.iv1350.seminar3.source.model.Sale;
 
 
 public class ContrTest {
@@ -58,8 +58,8 @@ public class ContrTest {
     
             contr.enterItemIdentifier(codeOfItem1);
     
-            assertEquals(3, sale.getAllItems().size(), "Unexpected quantity of items in sale");
-            assertEquals(1, sale.getAllItems().get(0).get(0).getQuantity(), "Unexpected quantity of the first item in the sale");
+            assertEquals(2, sale.getAllItems().size(), "Unexpected quantity of items in sale");
+            assertEquals(2, sale.getAllItems().get(0).get(0).getQuantity(), "Unexpected quantity of the first item in the sale");
         }
         
         @Test

@@ -45,9 +45,26 @@ public class Sale {
   */
     public void registerAllItems(Item item) {
 
-        ArrayList<Item> singleItemInfo = new ArrayList<>(); 
-        singleItemInfo.add(item);
-        this.listOfAllItems.add(singleItemInfo);
+        boolean check = false;
+
+        for (ArrayList<Item> items : listOfAllItems){
+            if(items.get(0).getCodeOfItem() == item.getCodeOfItem()){
+
+                items.get(0).setQuantity(items.get(0).getQuantity() + 1);
+                check = true;
+                
+            }
+
+            }
+
+            if(check == false){
+
+                ArrayList<Item> singleItemInfo = new ArrayList<>();
+                singleItemInfo.add(item);
+                this.listOfAllItems.add(singleItemInfo);
+
+            }
+        
     }
     
     /**
@@ -69,7 +86,8 @@ public class Sale {
         double totalPrice = 0.0;
         for (ArrayList<Item> singleItemInfo : listOfAllItems) {
             for (Item item : singleItemInfo) {
-                totalPrice += item.getPrice();
+                totalPrice += item.getPrice()*item.getQuantity();
+
             }
         }
         return totalPrice;
@@ -95,7 +113,7 @@ public class Sale {
         double totalVAT = 0.0;
         for (ArrayList<Item> singleItemInfo : listOfAllItems) {
             for (Item item : singleItemInfo) {
-                totalVAT += calculateAmountOfVATOneItem(item);
+                totalVAT += calculateAmountOfVATOneItem(item)*item.getQuantity();
             }
         }
         return totalVAT;
@@ -120,7 +138,7 @@ public class Sale {
         return this.listOfAllItems;
     }
 
-
+/* 
     public ArrayList<ArrayList<Item>> getReceiptArray() {
         ArrayList<ArrayList<Item>> newItemsList = new ArrayList<>();
 
@@ -146,13 +164,13 @@ public class Sale {
         }
 
         return newItemsList;
-    }
+    }*/
 
     public String getTotalPriceAndVAT(){
 
         StringBuilder saleBuilder = new StringBuilder();
 
-        saleBuilder.append("Total cost (incl VAT):").append(String.format("%.2f", calculateTotalPrice())).append(" SEK").append("\n").append("Total VAT:").append(String.format("%.2f", calculateTotalAmountVAT())).append(" SEK");
+        saleBuilder.append("Total cost (incl VAT):").append(String.format("%.2f", calculateTotalPrice())).append(" SEK").append("\n").append("Total VAT:").append(String.format("%.2f", calculateTotalAmountVAT())).append(" SEK").append("\n");
         return saleBuilder.toString();
 
     }

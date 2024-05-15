@@ -1,0 +1,4 @@
+14 maj 2024 17:49:44
+Exception was thrown: 
+Unable to add item 121 since it does not exist in inventory
+

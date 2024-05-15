@@ -1,0 +1,49 @@
+package se.kth.iv1350.seminar4.source.util;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import se.kth.iv1350.seminar4.source.integration.TotalIncomeObserver;
+
+/**
+ * Logs the total income to a file.
+ */
+
+public class TotalRevenueFileOutput implements TotalIncomeObserver {
+    private static final String LOG_FILE_NAME = "totalIncome.txt";
+    private static final TotalRevenueFileOutput INSTANCE = new TotalRevenueFileOutput();
+    private PrintWriter logFile;
+
+    /**
+     * Gets the instance of the TotalRevenueFileOutput.
+     * @return The instance of the TotalRevenueFileOutput.
+     */
+
+    public static TotalRevenueFileOutput getTotalRevenueFileOutput() {
+        return INSTANCE;
+    }
+
+    /**
+     * Creates an instance of the TotalRevenueFileOutput.
+     */
+
+    public TotalRevenueFileOutput() {
+        try {
+            logFile = new PrintWriter(new FileWriter(LOG_FILE_NAME), true);
+        } catch (IOException ex) {
+            System.out.println("Could not create logger.");
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * Updates the total income.
+     * @param totalIncome The total income.
+     */
+
+    @Override
+    public void updateTotalIncome(double totalIncome) {
+        logFile.println("Total income: " + String.format("%.2f", totalIncome));
+    }
+}

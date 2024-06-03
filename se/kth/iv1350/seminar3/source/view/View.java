@@ -43,7 +43,6 @@ public class View {
         System.out.println("Customer pays: "+ 100 + " SEK");
         contr.pay(totalPrice,100);
         System.out.println("Told external inventory system to decrease inventory quantity");
-        //contr.printReceipt(100);
         System.out.println("Change to give the customer:" + String.format("%.2f", contr.getChange(totalPrice, 100)) + " SEK");
         
     }

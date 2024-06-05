@@ -1,4 +1,4 @@
-package se.kth.iv1350.seminar3.tests.view;
+package tests.view;
 
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

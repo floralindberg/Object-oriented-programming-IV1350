@@ -1,4 +1,4 @@
-package se.kth.iv1350.seminar3.tests.saleTest;
+package se.kth.iv1350.seminar3.tests.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package se.kth.iv1350.seminar3.tests.contrTest;
+package se.kth.iv1350.seminar3.tests.controller;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.After;

@@ -1,4 +1,4 @@
-package se.kth.iv1350.seminar3.tests.accountingTest;
+package se.kth.iv1350.seminar3.tests.integration;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.AfterEach;

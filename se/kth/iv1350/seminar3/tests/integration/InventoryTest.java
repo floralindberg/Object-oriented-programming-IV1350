@@ -1,4 +1,4 @@
-package se.kth.iv1350.seminar3.tests.inventoryTest;
+package se.kth.iv1350.seminar3.tests.integration;
 
 import se.kth.iv1350.seminar3.source.integration.ExternalInventorySystem;
 import se.kth.iv1350.seminar3.source.integration.Item;

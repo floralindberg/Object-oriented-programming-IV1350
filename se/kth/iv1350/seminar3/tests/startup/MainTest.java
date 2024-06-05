@@ -1,4 +1,4 @@
-package se.kth.iv1350.seminar3.tests.mainTest;
+package se.kth.iv1350.seminar3.tests.startup;
 
 import se.kth.iv1350.seminar3.source.startup.Main;
 

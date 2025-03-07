@@ -1,0 +1,20 @@
+4 juni 2024 23:05:09
+Exception was thrown: 
+External inventory system cannot be reached 
+
+4 juni 2024 23:05:09
+Exception was thrown: 
+Unable to add item 121 since it does not exist in inventory
+
+4 juni 2024 23:05:09
+Exception was thrown: 
+External inventory system cannot be reached 
+
+4 juni 2024 23:05:09
+Exception was thrown: 
+External inventory system cannot be reached 
+
+4 juni 2024 23:05:09
+Exception was thrown: 
+External inventory system cannot be reached 
+
